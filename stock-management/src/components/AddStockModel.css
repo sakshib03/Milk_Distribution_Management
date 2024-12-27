@@ -1,0 +1,149 @@
+body {
+    background: linear-gradient(120deg, #d4dfe5, #eaeeea);
+    font-family: 'Roboto', sans-serif;
+    margin: 0;
+    padding: 0;
+  }
+  
+  .container {
+    position: relative;
+  }
+  
+  .modal-background {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background: rgba(0, 0, 0, 0.5);
+    backdrop-filter: blur(8px);
+    z-index: 100;
+    opacity: 0;
+    animation: fadeIn 0.5s forwards;
+  }
+  
+  .modal {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: linear-gradient(145deg, #ffffff, #f9f9f9);
+    padding: 25px;
+    border-radius: 12px;
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+    z-index: 101;
+    width: 400px;
+    max-width: 90%;
+    height: auto;
+    overflow-y: auto;
+    opacity: 0;
+    animation: slideIn 0.5s forwards;
+  }
+  
+  .modal h2 {
+    margin-bottom: 15px;
+    text-align: center;
+    color: #4a4a4a;
+    font-size: 24px;
+    font-weight: 700;
+    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.1);
+  }
+  
+  .modal label {
+    display: flex;
+    margin-bottom: 10px;
+    font-size: 16px;
+    font-weight: 600;
+    color: #333;
+  }
+  
+  .modal input {
+    width: calc(100% - 12px);
+    padding: 10px;
+    margin-bottom: 20px;
+    border: 1px solid #ddd;
+    border-radius: 6px;
+    font-size: 14px;
+    background: #f7f7f7;
+    transition: box-shadow 0.3s ease;
+  }
+  
+  .modal input:focus {
+    box-shadow: 0 0 8px rgba(0, 123, 255, 0.4);
+    border-color: #007bff;
+    outline: none;
+  }
+  
+  .modal button {
+    display: inline-block;
+    margin: 10px;
+    padding: 12px 25px;
+    font-size: 14px;
+    font-weight: bold;
+    color: #ffffff;
+    background: linear-gradient(145deg, #78a6f3, #237ed3);
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.15);
+  }
+  
+  .modal button[type="button"] {
+    background: linear-gradient(145deg, #f39896, #d5301e);
+  }
+  
+  .modal button:hover {
+    background: linear-gradient(145deg, #5d9ee0, #1a68ab);
+    transform: scale(1.05);
+  }
+  
+  .modal button[type="button"]:hover {
+    background: linear-gradient(145deg, #c4291b, #a31f15);
+    transform: scale(1.05);
+  }
+  
+  @media (max-width: 768px) {
+    .modal {
+      width: 90%;
+      padding: 20px;
+    }
+  
+    .modal h2 {
+      font-size: 20px;
+    }
+  
+    .modal label {
+      font-size: 14px;
+    }
+  
+    .modal input {
+      font-size: 14px;
+    }
+  
+    .modal button {
+      font-size: 12px;
+      padding: 10px 20px;
+    }
+  }
+ 
+  @keyframes fadeIn {
+    from {
+      opacity: 0;
+    }
+    to {
+      opacity: 1;
+    }
+  }
+  
+  @keyframes slideIn {
+    from {
+      opacity: 0;
+      transform: translate(-50%, -60%);
+    }
+    to {
+      opacity: 1;
+      transform: translate(-50%, -50%);
+    }
+  }
+  
